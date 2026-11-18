@@ -230,6 +230,7 @@
             text-decoration: none;
             font-size: 12px;
             font-weight: bold;
+            cursor: pointer;
         }
         .map-btn {
             display: block;
@@ -259,7 +260,7 @@
             <h1>HELPTEC INFORMÁTICA</h1>
             <p>Assistência Técnica</p>
         </div>
-        <a href="https://wa.me/5535997740708?text=Olá%20Cândido,%20vim%20pelo%20site!" class="btn-zap">WhatsApp</a>
+        <a id="link-zap-top" href="#" class="btn-zap">WhatsApp</a>
     </header>
 
     <div class="hero">
@@ -268,89 +269,48 @@
         </div>
         <h2>Soluções em TI e <span>Manutenção Especializada</span></h2>
         <p>Atendimento personalizado, transparência e precisão total para PCs e Notebooks.</p>
-        <a href="https://wa.me/5535997740708?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento!" class="btn-main">Solicitar Orçamento no WhatsApp</a>
+        <a id="link-zap-hero" href="#" class="btn-main">Solicitar Orçamento no WhatsApp</a>
     </div>
 
     <div class="bento-grid">
         <div class="bento-item">
-            <span class="bento-icon">⚙️</span>
-            <span>Suporte Técnico</span>
+            <span class="bento-icon">⚡</span>
+            <span>Agilidade</span>
         </div>
         <div class="bento-item">
             <span class="bento-icon">🛡️</span>
-            <span>Soluções em TI</span>
+            <span>Transparência</span>
         </div>
         <div class="bento-item">
-            <span class="bento-icon">🤝</span>
-            <span>Atendimento Direto</span>
+            <span class="bento-icon">🔧</span>
+            <span>Precisão</span>
         </div>
     </div>
 
     <div class="content">
-        
-        <!-- QUEM SOU EU -->
         <div class="card">
-            <h3>Quem Sou Eu?</h3>
+            <h3>Sobre o Técnico</h3>
             <div class="profile-container">
-                <img src="1793905416796.jpg" alt="Cândido Rodnei Alem" class="profile-img">
+                <img src="1793905416796.jpg" alt="Cândido Rodnei" class="profile-img" onerror="this.style.display='none'">
                 <div>
-                    <strong style="color: #fff; font-size: 15px; display: block;">Cândido Rodnei Alem</strong>
-                    <span style="color: #00d4ff; font-size: 12px;">Técnico em Informática</span>
+                    <h4 style="color: #fff; font-size: 16px;">Cândido Rodnei</h4>
+                    <p style="font-size: 12px; color: #00d4ff; margin-bottom: 0;">Especialista em Hardware & TI</p>
                 </div>
             </div>
-            <p>Prazer, sou <strong>Cândido Rodnei Alem</strong>, técnico em informática e responsável pela Helptec Informática. Minha trajetória é movida pelo interesse em tecnologia e, principalmente, pela vontade de solucionar problemas e ajudar pessoas.</p>
-            <p>Acredito que um bom profissional não é aquele que apenas conserta equipamentos, mas aquele que busca entender cada necessidade e entrega soluções de verdade.</p>
+            <p>Atuação dedicada ao diagnóstico preciso e solução definitiva para computadores e notebooks, com foco na longevidade e máxima performance do seu equipamento.</p>
             <div class="highlight-quote">
-                Compromisso com atendimento técnico, transparência e dedicação em cada serviço realizado.
+                "Cada equipamento é tratado com rigor técnico e total clareza no orçamento."
             </div>
         </div>
 
-        <!-- NOSSOS SERVIÇOS -->
         <div class="card">
             <h3>Nossos Serviços</h3>
             
             <div class="service-item">
-                <h4>Formatação e Sistemas</h4>
-                <p>Instalação limpa de Windows ou Linux, drivers atualizados e otimização completa do sistema.</p>
-                <a href="https://wa.me/5535997740708?text=Olá,%20quero%20saber%20sobre%20Formatação." class="service-btn">Consultar via WhatsApp</a>
+                <h4>Formatação & Otimização</h4>
+                <p>Instalação limpa do sistema operacional, drivers atualizados, backup seguro e ajustes para máximo desempenho.</p>
+                <a id="link-srv-1" href="#" class="service-btn">Consultar Serviço</a>
             </div>
 
             <div class="service-item">
-                <h4>Limpeza Física Preventiva</h4>
-                <p>Remoção de poeira e higienização interna para evitar superaquecimento e lentidão.</p>
-                <a href="https://wa.me/5535997740708?text=Olá,%20quero%20saber%20sobre%20Limpeza%20Física." class="service-btn">Consultar via WhatsApp</a>
-            </div>
-
-            <div class="service-item">
-                <h4>Avaliação Técnica e Diagnóstico</h4>
-                <p>Testes completos de hardware, saúde de SSD, bateria e orientação precisa de peças.</p>
-                <a href="https://wa.me/5535997740708?text=Olá,%20quero%20saber%20sobre%20Avaliação%20Técnica." class="service-btn">Consultar via WhatsApp</a>
-            </div>
-
-            <div class="service-item">
-                <h4>Manutenção e Troca de Peças</h4>
-                <p>Substituição de componentes em computadores e notebooks com total cuidado e precisão.</p>
-                <a href="https://wa.me/5535997740708?text=Olá,%20quero%20saber%20sobre%20Manutenção." class="service-btn">Consultar via WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- CONHEÇA NOSSO ESPAÇO -->
-        <div class="card">
-            <h3>Conheça Nosso Espaço</h3>
-            <!-- Foto do espaço configurada com o nome correto -->
-            <img src="20260926_194706.jpg" alt="Espaço Helptec Informática" class="space-img" onerror="this.style.display='none'">
-            
-            <p>Este é o meu local de trabalho, onde cuido pessoalmente de cada detalhe. Eu mesmo realizo a manutenção detalhada de PCs e Notebooks, com atendimento totalmente personalizado.</p>
-            <p style="margin-top: 12px;">📍 <strong>Endereço:</strong> Rua Francisco Lisboa, 01, sala 301, 2º andar - Centro, Três Corações - MG</p>
-            <a href="https://www.google.com/maps/search/?api=1&query=Rua+Francisco+Lisboa+01+Centro+Tres+Coracoes+MG" target="_blank" class="map-btn">Abrir Rota no Google Maps</a>
-        </div>
-
-    </div>
-
-    <footer>
-        <p style="color: #fff; font-weight: bold; margin-bottom: 4px;">HELPTEC INFORMÁTICA - ASSISTÊNCIA TÉCNICA</p>
-        <p>Obrigado a todos que acompanham e apoiam meu trabalho!</p>
-    </footer>
-
-</body>
-</html>
+                <h4>Limpeza Interna & Pasta Térmica</h4>
