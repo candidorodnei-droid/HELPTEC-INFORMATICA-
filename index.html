@@ -230,7 +230,6 @@
             text-decoration: none;
             font-size: 12px;
             font-weight: bold;
-            cursor: pointer;
         }
         .map-btn {
             display: block;
@@ -243,6 +242,38 @@
             font-size: 13px;
             font-weight: bold;
             margin-top: 14px;
+        }
+        .remote-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 16px;
+        }
+        .btn-anydesk {
+            flex: 1;
+            min-width: 140px;
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid #ef4444;
+            color: #f87171;
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        .btn-suporte {
+            flex: 1;
+            min-width: 140px;
+            background: rgba(0, 212, 255, 0.12);
+            border: 1px solid rgba(0, 212, 255, 0.4);
+            color: #00d4ff;
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
         }
         footer {
             text-align: center;
@@ -260,7 +291,7 @@
             <h1>HELPTEC INFORMÁTICA</h1>
             <p>Assistência Técnica</p>
         </div>
-        <a id="link-zap-top" href="#" class="btn-zap">WhatsApp</a>
+        <a href="https://wa.me/5535997740708?text=Ol%C3%A1%20C%C3%A2ndido,%20vim%20pelo%20site!" class="btn-zap">WhatsApp</a>
     </header>
 
     <div class="hero">
@@ -269,7 +300,7 @@
         </div>
         <h2>Soluções em TI e <span>Manutenção Especializada</span></h2>
         <p>Atendimento personalizado, transparência e precisão total para PCs e Notebooks.</p>
-        <a id="link-zap-hero" href="#" class="btn-main">Solicitar Orçamento no WhatsApp</a>
+        <a href="https://wa.me/5535997740708?text=Ol%C3%A1,%20gostaria%20de%20solicitar%20um%20or%C3%A7amento!" class="btn-main">Solicitar Orçamento no WhatsApp</a>
     </div>
 
     <div class="bento-grid">
@@ -309,8 +340,50 @@
             <div class="service-item">
                 <h4>Formatação & Otimização</h4>
                 <p>Instalação limpa do sistema operacional, drivers atualizados, backup seguro e ajustes para máximo desempenho.</p>
-                <a id="link-srv-1" href="#" class="service-btn">Consultar Serviço</a>
+                <a href="https://wa.me/5535997740708?text=Ol%C3%A1,%20quero%20saber%20sobre%20Formata%C3%A7%C3%A3o." class="service-btn">Consultar Serviço</a>
             </div>
 
             <div class="service-item">
                 <h4>Limpeza Interna & Pasta Térmica</h4>
+                <p>Remoção completa de poeira, higienização de componentes e troca de pasta térmica de alta condutividade.</p>
+                <a href="https://wa.me/5535997740708?text=Ol%C3%A1,%20quero%20saber%20sobre%20Limpeza%20Interna." class="service-btn">Consultar Serviço</a>
+            </div>
+
+            <div class="service-item">
+                <h4>Upgrades de Hardware (SSD / RAM)</h4>
+                <p>Instalação de SSDs NVMe/SATA e expansão de memória RAM para deixar seu PC ou notebook muito mais rápido.</p>
+                <a href="https://wa.me/5535997740708?text=Ol%C3%A1,%20quero%20saber%20sobre%20Upgrades." class="service-btn">Consultar Serviço</a>
+            </div>
+
+            <div class="service-item" style="margin-bottom: 0;">
+                <h4>Manutenção Preventiva & Corretiva</h4>
+                <p>Diagnóstico de falhas, reparos em geral, montagem de computadores e suporte técnico especializado.</p>
+                <a href="https://wa.me/5535997740708?text=Ol%C3%A1,%20quero%20saber%20sobre%20Manuten%C3%A7%C3%A3o." class="service-btn">Consultar Serviço</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Conheça Nosso Espaço</h3>
+            <img src="20260926_194706.jpg" alt="Espaço Helptec Informática" class="space-img" onerror="this.style.display='none'">
+            <p>Este é o meu local de trabalho, onde cuido pessoalmente de cada detalhe. Eu mesmo realizo a manutenção detalhada de cada equipamento com ferramentas adequadas e organização.</p>
+            <p style="margin-top: 12px;"><strong>Endereço:</strong> Rua Francisco Lisboa, 01, sala 301, 2º andar - Centro, Três Corações - MG</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Rua+Francisco+Lisboa+01+Centro+Tres+Coracoes+MG" target="_blank" class="map-btn">📍 Ver no Google Maps</a>
+        </div>
+
+        <div class="card">
+            <h3>Suporte e Acesso Remoto</h3>
+            <p>Clique no programa indicado pelo técnico para baixar e iniciar seu atendimento remoto:</p>
+            <div class="remote-buttons">
+                <a href="https://github.com/candidorodnei-droid/SUPORTE-HELPTEC/raw/main/AnyDesk.exe" class="btn-anydesk">⬇️ Baixar AnyDesk</a>
+                <a href="https://github.com/candidorodnei-droid/SUPORTE-HELPTEC/raw/main/SUPORTE.exe" class="btn-suporte">⬇️ Baixar Suporte</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p style="color: #fff; font-weight: bold; margin-bottom: 4px;">HELPTEC INFORMÁTICA - ASSISTÊNCIA TÉCNICA</p>
+        <p>Obrigado a todos que acompanham e apoiam meu trabalho!</p>
+    </footer>
+
+</body>
+</html>
