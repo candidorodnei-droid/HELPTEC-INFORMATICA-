@@ -4,15 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Helptec Informática | Assistência Técnica Especializada</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-dark: #030712;
-            --bg-card: rgba(11, 20, 38, 0.78);
-            --bg-card-hover: rgba(16, 30, 56, 0.9);
-            --bg-glass: rgba(6, 13, 27, 0.72);
+            --bg-card: #0b1426;
+            --bg-card-hover: #101e38;
             --primary: #00d4ff;
             --primary-soft: rgba(0, 212, 255, 0.12);
             --primary-glow: rgba(0, 212, 255, 0.28);
@@ -21,60 +17,32 @@
             --text-main: #f8fafc;
             --text-muted: #cbd5e1;
             --text-dim: #94a3b8;
-            --border-color: rgba(0, 212, 255, 0.22);
-            --border-subtle: rgba(148, 163, 184, 0.16);
+            --border-color: rgba(0, 212, 255, 0.24);
+            --border-subtle: rgba(148, 163, 184, 0.18);
             --radius-lg: 18px;
             --radius-md: 12px;
-            --transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Plus Jakarta Sans', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
             scroll-behavior: smooth;
         }
 
         body {
             background-color: var(--bg-dark);
+            background-image: linear-gradient(180deg, #040d1e 0%, #030712 100%);
             color: var(--text-main);
             line-height: 1.65;
             overflow-x: hidden;
-            position: relative;
             min-height: 100vh;
-        }
-
-        /* FUNDO COM A IMAGEM 1000737982.jpg + OVERLAY DE CONTRASTE */
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background-image:
-                linear-gradient(180deg, rgba(3, 7, 18, 0.76) 0%, rgba(4, 12, 28, 0.82) 48%, rgba(2, 6, 15, 0.92) 100%),
-                url("1000737982.jpg");
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-            z-index: -2;
-            pointer-events: none;
-        }
-
-        /* VINHETA SUTIL PARA FOCO NO CONTEÚDO */
-        body::after {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background: radial-gradient(circle at 50% 18%, rgba(0, 212, 255, 0.08) 0%, transparent 62%);
-            z-index: -1;
-            pointer-events: none;
         }
 
         /* HEADER / NAVBAR */
         header {
-            background: rgba(3, 8, 20, 0.82);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            background-color: rgba(3, 8, 20, 0.94);
             border-bottom: 1px solid var(--border-color);
             position: sticky;
             top: 0;
@@ -140,29 +108,12 @@
             text-decoration: none;
             font-size: 13.5px;
             font-weight: 600;
-            position: relative;
             padding: 4px 0;
-            transition: var(--transition);
-        }
-
-        .nav-links a::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -2px;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            border-radius: 999px;
-            transition: width 0.25s ease;
+            transition: color 0.2s ease;
         }
 
         .nav-links a:hover {
-            color: #ffffff;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
+            color: var(--primary);
         }
 
         .nav-actions {
@@ -180,7 +131,7 @@
             font-size: 13px;
             font-weight: 700;
             box-shadow: 0 4px 16px rgba(34, 197, 94, 0.35);
-            transition: var(--transition);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
             white-space: nowrap;
         }
 
@@ -196,12 +147,11 @@
             width: 38px;
             height: 38px;
             border-radius: 10px;
-            background: rgba(255, 255, 255, 0.05);
+            background-color: rgba(255, 255, 255, 0.06);
             border: 1px solid var(--border-subtle);
             color: #ffffff;
             font-size: 18px;
             cursor: pointer;
-            transition: var(--transition);
         }
 
         .menu-toggle:hover {
@@ -214,7 +164,7 @@
             flex-direction: column;
             gap: 6px;
             padding: 12px 20px 18px;
-            background: rgba(3, 8, 20, 0.95);
+            background-color: #030814;
             border-bottom: 1px solid var(--border-color);
         }
 
@@ -229,844 +179,57 @@
             border-radius: 10px;
             font-size: 14px;
             font-weight: 600;
-            transition: var(--transition);
         }
 
         .mobile-drawer a:hover {
-            background: var(--primary-soft);
+            background-color: var(--primary-soft);
             color: #ffffff;
         }
 
-        /* HERO SECTION */
-        .hero {
+        /* BANNER PRINCIPAL DO CABEÇALHO */
+        .hero-banner-wrapper {
+            max-width: 1160px;
+            margin: 24px auto 0;
+            padding: 0 20px;
+        }
+
+        .hero-banner {
             position: relative;
-            padding: 84px 20px 76px;
+            width: 100%;
+            border-radius: 22px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 212, 255, 0.35);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 35px rgba(0, 212, 255, 0.14);
+            background-color: #041226;
+        }
+
+        .hero-banner img {
+            width: 100%;
+            height: auto;
+            max-height: 430px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        /* HERO CTA SECTION LOGO ABAIXO DO BANNER */
+        .hero {
+            padding: 28px 20px 64px;
             border-bottom: 1px solid var(--border-color);
             text-align: center;
         }
 
         .hero-container {
-            max-width: 840px;
+            max-width: 1120px;
             margin: 0 auto;
-            background: rgba(4, 11, 24, 0.56);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 212, 255, 0.18);
-            border-radius: 24px;
-            padding: 44px 26px;
-            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+            background: linear-gradient(180deg, #0b1426 0%, #060d1b 100%);
+            border: 1px solid rgba(0, 212, 255, 0.24);
+            border-radius: 22px;
+            padding: 38px 26px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
         }
 
         .badge {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            background: rgba(0, 212, 255, 0.12);
-            border: 1px solid rgba(0, 212, 255, 0.38);
-            color: #7dd3fc;
-            padding: 7px 16px;
-            border-radius: 50px;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 0.3px;
-            margin-bottom: 22px;
-        }
-
-        .pulse-dot {
-            width: 8px;
-            height: 8px;
-            background-color: var(--whatsapp);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--whatsapp);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.25); opacity: 0.7; }
-        }
-
-        .hero h2 {
-            font-size: clamp(28px, 4.8vw, 44px);
-            font-weight: 800;
-            line-height: 1.16;
-            letter-spacing: -0.02em;
-            margin-bottom: 18px;
-            color: #ffffff;
-        }
-
-        .hero h2 span {
-            background: linear-gradient(90deg, #00d4ff, #67e8f9);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: clamp(15px, 1.9vw, 17px);
-            color: var(--text-muted);
-            margin-bottom: 32px;
-            max-width: 630px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-            justify-content: center;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #25d366, #15803d);
-            color: #ffffff;
-            padding: 15px 28px;
-            border-radius: var(--radius-md);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 15px;
-            box-shadow: 0 10px 26px rgba(37, 211, 102, 0.32);
-            transition: var(--transition);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 14px 30px rgba(37, 211, 102, 0.45);
-        }
-
-        .btn-secondary {
-            background: rgba(11, 20, 38, 0.85);
-            border: 1px solid rgba(0, 212, 255, 0.45);
-            color: #e0f2fe;
-            padding: 15px 28px;
-            border-radius: var(--radius-md);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 15px;
-            transition: var(--transition);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(0, 212, 255, 0.16);
-            border-color: var(--primary);
-            transform: translateY(-2px);
-        }
-
-        /* METRICS / HIGHLIGHTS */
-        .highlights {
-            max-width: 1160px;
-            margin: -30px auto 0;
-            padding: 0 20px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .highlights-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 16px;
-        }
-
-        .highlight-box {
-            background: var(--bg-card);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border: 1px solid var(--border-color);
-            border-radius: 15px;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.42);
-            transition: var(--transition);
-        }
-
-        .highlight-box:hover {
-            transform: translateY(-3px);
-            border-color: rgba(0, 212, 255, 0.45);
-        }
-
-        .highlight-icon {
-            width: 46px;
-            height: 46px;
-            background: var(--primary-soft);
-            border: 1px solid rgba(0, 212, 255, 0.25);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            flex-shrink: 0;
-        }
-
-        .highlight-info h4 {
-            font-size: 15px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 2px;
-        }
-
-        .highlight-info p {
-            font-size: 12.5px;
-            color: var(--text-dim);
-        }
-
-        /* SECTIONS COMMON */
-        section {
-            max-width: 1160px;
-            margin: 0 auto;
-            padding: 72px 20px 12px;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 42px;
-        }
-
-        .section-tag {
-            color: var(--primary);
-            font-size: 11.5px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.6px;
-            display: inline-block;
-            background: rgba(0, 212, 255, 0.08);
-            border: 1px solid rgba(0, 212, 255, 0.22);
-            padding: 4px 12px;
-            border-radius: 999px;
-            margin-bottom: 10px;
-        }
-
-        .section-header h3 {
-            font-size: clamp(24px, 3.4vw, 33px);
-            font-weight: 800;
-            letter-spacing: -0.015em;
-            color: #ffffff;
-        }
-
-        .section-header p {
-            color: var(--text-muted);
-            font-size: 14.5px;
-            max-width: 570px;
-            margin: 10px auto 0;
-        }
-
-        /* SERVICES GRID */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-        }
-
-        .service-card {
-            background: var(--bg-card);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-lg);
-            padding: 26px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
-            transition: var(--transition);
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-            background: var(--bg-card-hover);
-            box-shadow: 0 18px 36px rgba(0, 0, 0, 0.48);
-        }
-
-        .service-top {
-            margin-bottom: 22px;
-        }
-
-        .service-badge-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--primary-soft);
-            border: 1px solid rgba(0, 212, 255, 0.28);
-            border-radius: 13px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            margin-bottom: 16px;
-        }
-
-        .service-card h4 {
-            font-size: 17px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 10px;
-        }
-
-        .service-card p {
-            font-size: 13.5px;
-            color: var(--text-muted);
-        }
-
-        .btn-service {
-            display: block;
-            text-align: center;
-            background: rgba(0, 212, 255, 0.1);
-            border: 1px solid rgba(0, 212, 255, 0.35);
-            color: #7dd3fc;
-            padding: 11px 14px;
-            border-radius: 11px;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 700;
-            transition: var(--transition);
-        }
-
-        .btn-service:hover {
-            background: var(--primary);
-            border-color: var(--primary);
-            color: #030712;
-        }
-
-        /* HOW IT WORKS */
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
-            gap: 20px;
-        }
-
-        .step-card {
-            background: var(--bg-card);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-lg);
-            padding: 26px;
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
-            transition: var(--transition);
-        }
-
-        .step-card:hover {
-            border-color: rgba(0, 212, 255, 0.4);
-            transform: translateY(-3px);
-        }
-
-        .step-number {
-            font-size: 32px;
-            font-weight: 800;
-            color: var(--primary);
-            opacity: 0.75;
-            margin-bottom: 10px;
-            line-height: 1;
-        }
-
-        .step-card h4 {
-            font-size: 16.5px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 8px;
-        }
-
-        .step-card p {
-            font-size: 13.5px;
-            color: var(--text-muted);
-        }
-
-        /* ABOUT & SPACE TWO-COLUMN */
-        .two-col-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-            gap: 24px;
-        }
-
-        .panel-card {
-            background: var(--bg-card);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border: 1px solid var(--border-subtle);
-            border-radius: 20px;
-            padding: 28px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-shadow: 0 14px 32px rgba(0, 0, 0, 0.38);
-        }
-
-        .tech-header {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 18px;
-            background: rgba(3, 8, 20, 0.65);
-            padding: 14px 16px;
-            border-radius: 15px;
-            border: 1px solid var(--border-color);
-        }
-
-        .tech-photo {
-            width: 78px;
-            height: 78px;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: center top;
-            border: 2px solid var(--primary);
-            box-shadow: 0 0 18px var(--primary-glow);
-            flex-shrink: 0;
-        }
-
-        .tech-header h4 {
-            font-size: 18px;
-            font-weight: 800;
-            color: #ffffff;
-            line-height: 1.25;
-        }
-
-        .tech-header span {
-            font-size: 12.5px;
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        .panel-card p {
-            font-size: 14px;
-            color: var(--text-muted);
-            margin-bottom: 14px;
-        }
-
-        .quote-box {
-            background: rgba(0, 212, 255, 0.08);
-            border-left: 3px solid var(--primary);
-            padding: 14px 16px;
-            border-radius: 0 12px 12px 0;
-            font-size: 13px;
-            color: #e2e8f0;
-            font-style: italic;
-        }
-
-        .workshop-img {
-            width: 100%;
-            height: 215px;
-            object-fit: cover;
-            border-radius: 14px;
-            margin-bottom: 16px;
-            border: 1px solid var(--border-color);
-        }
-
-        .address-line {
-            background: rgba(3, 8, 20, 0.65);
-            padding: 13px 15px;
-            border-radius: 12px;
-            font-size: 13px;
-            color: #e2e8f0;
-            margin-bottom: 16px;
-            border: 1px solid var(--border-subtle);
-        }
-
-        .btn-map {
-            display: block;
-            text-align: center;
-            background: linear-gradient(135deg, #2563eb, #1d4ed8);
-            color: #ffffff;
-            padding: 12px 16px;
-            border-radius: 11px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 13.5px;
-            box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
-            transition: var(--transition);
-        }
-
-        .btn-map:hover {
-            background: linear-gradient(135deg, #3b82f6, #2563eb);
-            transform: translateY(-1px);
-        }
-
-        /* REMOTE SUPPORT HUB */
-        .remote-hub {
-            background: rgba(8, 16, 32, 0.84);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(0, 212, 255, 0.35);
-            border-radius: 22px;
-            padding: 40px 28px;
-            text-align: center;
-            box-shadow: 0 18px 44px rgba(0, 0, 0, 0.48);
-        }
-
-        .remote-hub h3 {
-            font-size: clamp(22px, 3vw, 27px);
-            font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 10px;
-        }
-
-        .remote-hub p {
-            color: var(--text-muted);
-            font-size: 14.5px;
-            max-width: 590px;
-            margin: 0 auto 28px;
-        }
-
-        .remote-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            justify-content: center;
-            max-width: 540px;
-            margin: 0 auto;
-        }
-
-        .btn-anydesk {
-            flex: 1;
-            min-width: 210px;
-            background: rgba(239, 68, 68, 0.16);
-            border: 1px solid rgba(239, 68, 68, 0.75);
-            color: #fecaca;
-            padding: 15px 22px;
-            border-radius: var(--radius-md);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 14.5px;
-            transition: var(--transition);
-        }
-
-        .btn-anydesk:hover {
-            background: #ef4444;
-            color: #ffffff;
-            transform: translateY(-2px);
-        }
-
-        .btn-suporte {
-            flex: 1;
-            min-width: 210px;
-            background: rgba(0, 212, 255, 0.15);
-            border: 1px solid var(--primary);
-            color: #bae6fd;
-            padding: 15px 22px;
-            border-radius: var(--radius-md);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 14.5px;
-            transition: var(--transition);
-        }
-
-        .btn-suporte:hover {
-            background: var(--primary);
-            color: #030712;
-            transform: translateY(-2px);
-        }
-
-        .remote-note {
-            margin-top: 20px;
-            font-size: 12.5px;
-            color: var(--text-dim);
-        }
-
-        /* FOOTER */
-        footer {
-            margin-top: 72px;
-            background: rgba(2, 6, 15, 0.88);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border-top: 1px solid var(--border-color);
-            padding: 38px 20px;
-            text-align: center;
-        }
-
-        footer h5 {
-            color: #ffffff;
-            font-size: 14px;
-            font-weight: 800;
-            letter-spacing: 0.6px;
-            margin-bottom: 6px;
-        }
-
-        footer p {
-            color: var(--text-dim);
-            font-size: 12.5px;
-            margin-bottom: 4px;
-        }
-
-        /* FLOATING WHATSAPP */
-        .float-zap {
-            position: fixed;
-            bottom: 22px;
-            right: 22px;
-            background: linear-gradient(135deg, #25d366, #15803d);
-            color: #ffffff;
-            width: 58px;
-            height: 58px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 26px;
-            text-decoration: none;
-            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
-            z-index: 999;
-            transition: var(--transition);
-        }
-
-        .float-zap:hover {
-            transform: scale(1.08);
-        }
-
-        @media (min-width: 768px) {
-            .nav-links {
-                display: flex;
-            }
-            .menu-toggle,
-            .mobile-drawer {
-                display: none !important;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .hero {
-                padding: 54px 16px 56px;
-            }
-            .hero-container {
-                padding: 32px 18px;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="nav-container">
-            <a href="#inicio" class="brand">
-                <div class="brand-icon">H</div>
-                <div class="brand-text">
-                    <h1>HELPTEC INFORMÁTICA</h1>
-                    <span>Assistência Técnica</span>
-                </div>
-            </a>
-            <nav class="nav-links">
-                <a href="#servicos">Serviços</a>
-                <a href="#como-funciona">Como Funciona</a>
-                <a href="#sobre">Sobre & Espaço</a>
-                <a href="#suporte-remoto">Suporte Remoto</a>
-            </nav>
-            <div class="nav-actions">
-                <a id="link-zap-top" href="#" class="btn-nav-zap">WhatsApp</a>
-                <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
-            </div>
-        </div>
-        <div class="mobile-drawer" id="mobile-drawer">
-            <a href="#servicos">Serviços</a>
-            <a href="#como-funciona">Como Funciona</a>
-            <a href="#sobre">Sobre & Espaço</a>
-            <a href="#suporte-remoto">Suporte Remoto</a>
-        </div>
-    </header>
-
-    <div id="inicio" class="hero">
-        <div class="hero-container">
-            <div class="badge">
-                <span class="pulse-dot"></span> Atendimento Especializado • Três Corações - MG
-            </div>
-            <h2>Performance, Precisão e <span>Confiança para o seu Equipamento</span></h2>
-            <p>Diagnóstico técnico transparente e manutenção especializada em computadores e notebooks. Atendimento direto com o técnico responsável do início ao fim.</p>
-            <div class="hero-actions">
-                <a id="link-zap-hero" href="#" class="btn-primary">Solicitar Orçamento no WhatsApp</a>
-                <a href="#suporte-remoto" class="btn-secondary">💻 Acesso Remoto</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="highlights">
-        <div class="highlights-grid">
-            <div class="highlight-box">
-                <div class="highlight-icon">⚡</div>
-                <div class="highlight-info">
-                    <h4>Diagnóstico Ágil</h4>
-                    <p>Avaliação precisa sem enrolação</p>
-                </div>
-            </div>
-            <div class="highlight-box">
-                <div class="highlight-icon">🛡️</div>
-                <div class="highlight-info">
-                    <h4>100% Transparente</h4>
-                    <p>Orçamento claro antes do serviço</p>
-                </div>
-            </div>
-            <div class="highlight-box">
-                <div class="highlight-icon">🔧</div>
-                <div class="highlight-info">
-                    <h4>Cuidado Técnico</h4>
-                    <p>Peças e insumos de qualidade</p>
-                </div>
-            </div>
-            <div class="highlight-box">
-                <div class="highlight-icon">🌐</div>
-                <div class="highlight-info">
-                    <h4>Suporte Remoto</h4>
-                    <p>Atendimento rápido à distância</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <section id="servicos">
-        <div class="section-header">
-            <span class="section-tag">O que fazemos</span>
-            <h3>Nossos Serviços Especializados</h3>
-            <p>Soluções completas para devolver a velocidade, estabilidade e vida útil do seu PC ou notebook.</p>
-        </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-top">
-                    <div class="service-badge-icon">💿</div>
-                    <h4>Formatação & Otimização</h4>
-                    <p>Instalação limpa do sistema operacional, drivers oficiais atualizados, backup seguro dos seus arquivos e ajustes para máxima velocidade.</p>
-                </div>
-                <a id="link-srv-1" href="#" class="btn-service">Consultar no WhatsApp</a>
-            </div>
-
-            <div class="service-card">
-                <div class="service-top">
-                    <div class="service-badge-icon">❄️</div>
-                    <h4>Limpeza Interna & Pasta Térmica</h4>
-                    <p>Higienização completa contra poeira e oxidação, limpeza de coolers e aplicação de pasta térmica de alta condutividade para evitar superaquecimento.</p>
-                </div>
-                <a id="link-srv-2" href="#" class="btn-service">Consultar no WhatsApp</a>
-            </div>
-
-            <div class="service-card">
-                <div class="service-top">
-                    <div class="service-badge-icon">🚀</div>
-                    <h4>Upgrades de Hardware (SSD / RAM)</h4>
-                    <p>Instalação de SSDs NVMe/SATA de alta velocidade e expansão de memória RAM para deixar seu computador até 10x mais rápido.</p>
-                </div>
-                <a id="link-srv-3" href="#" class="btn-service">Consultar no WhatsApp</a>
-            </div>
-
-            <div class="service-card">
-                <div class="service-top">
-                    <div class="service-badge-icon">🛠️</div>
-                    <h4>Manutenção Preventiva & Corretiva</h4>
-                    <p>Diagnóstico avançado de falhas, reparos em geral, troca de componentes, montagem de PCs sob medida e suporte técnico dedicado.</p>
-                </div>
-                <a id="link-srv-4" href="#" class="btn-service">Consultar no WhatsApp</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="como-funciona">
-        <div class="section-header">
-            <span class="section-tag">Processo Profissional</span>
-            <h3>Como Funciona o Atendimento</h3>
-            <p>Simples, seguro e sem surpresas no valor final.</p>
-        </div>
-        <div class="steps-grid">
-            <div class="step-card">
-                <div class="step-number">01</div>
-                <h4>Contato e Avaliação</h4>
-                <p>Você relata o problema pelo WhatsApp ou traz o equipamento até nossa bancada para uma análise técnica detalhada.</p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">02</div>
-                <h4>Orçamento Transparente</h4>
-                <p>Apresentamos a solução exata e o valor fechado. O serviço só é iniciado após a sua aprovação total.</p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">03</div>
-                <h4>Execução e Entrega</h4>
-                <p>Realizamos o serviço com rigor técnico, testes de estabilidade e entregamos o equipamento pronto para uso.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="sobre">
-        <div class="section-header">
-            <span class="section-tag">Quem Cuida do Seu Equipamento</span>
-            <h3>Sobre o Técnico & Nosso Espaço</h3>
-        </div>
-        <div class="two-col-grid">
-            <div class="panel-card">
-                <div>
-                    <div class="tech-header">
-                        <img src="1793905416796.jpg" alt="Cândido Rodnei" class="tech-photo" onerror="this.style.display='none'">
-                        <div>
-                            <h4>Cândido Rodnei Alem </h4>
-                            <span>Especialista em Hardware & TI</span>
-                        </div>
-                    </div>
-                    <p>Atuação dedicada ao diagnóstico preciso e solução definitiva para computadores e notebooks, com foco na longevidade e máxima performance de cada máquina.</p>
-                    <p>Aqui você fala diretamente com quem realiza o serviço, garantindo responsabilidade e atenção aos mínimos detalhes.</p>
-                </div>
-                <div class="quote-box">
-                    "Cada equipamento é tratado com rigor técnico, ferramentas adequadas e total clareza no orçamento."
-                </div>
-            </div>
-
-            <div class="panel-card">
-                <div>
-                    <img src="20260926_194706.jpg" alt="Espaço Helptec Informática" class="workshop-img" onerror="this.style.display='none'">
-                    <p>Bancada estruturada e organizada para realizar manutenções com segurança e precisão no centro de Três Corações.</p>
-                    <div class="address-line">
-                        <strong>📍 Endereço:</strong> Rua Francisco Lisboa, 01, sala 301, 2º andar - Centro, Três Corações - MG
-                    </div>
-                </div>
-                <a id="link-maps" href="#" target="_blank" class="btn-map">Abrir Localização no Google Maps</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="suporte-remoto">
-        <div class="remote-hub">
-            <span class="section-tag">Central do Cliente</span>
-            <h3>Suporte e Acesso Remoto</h3>
-            <p>Precisa de atendimento rápido sem sair de casa? Clique no programa indicado pelo técnico abaixo, execute o arquivo baixado e informe o código exibido na tela.</p>
-            <div class="remote-buttons">
-                <a id="link-anydesk" href="#" class="btn-anydesk">⬇️ Baixar AnyDesk</a>
-                <a id="link-suporte" href="#" class="btn-suporte">⬇️ Baixar Suporte</a>
-            </div>
-            <div class="remote-note">
-                Arquivos oficiais hospedados com segurança pela Helptec Informática. Não requer instalação complexa.
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <h5>HELPTEC INFORMÁTICA - ASSISTÊNCIA TÉCNICA</h5>
-        <p>Três Corações - MG • Manutenção de Computadores, Notebooks e Suporte em TI</p>
-        <p>Obrigado a todos que acompanham e confiam no nosso trabalho!</p>
-    </footer>
-
-    <a id="link-zap-float" href="#" class="float-zap" title="Falar no WhatsApp">💬</a>
-
-    <script>
-        const zap = "https://" + "wa.me/5535997740708?text=";
-        const gh = "https://" + "github.com/candidorodnei-droid/SUPORTE-HELPTEC/raw/main/";
-
-        document.getElementById("link-zap-top").href = zap + "Ol%C3%A1%20C%C3%A2ndido,%20vim%20pelo%20site!";
-        document.getElementById("link-zap-hero").href = zap + "Ol%C3%A1,%20gostaria%20de%20solicitar%20um%20or%C3%A7amento!";
-        document.getElementById("link-zap-float").href = zap + "Ol%C3%A1%20C%C3%A2ndido,%20preciso%20de%20atendimento%20t%C3%A9cnico!";
-        document.getElementById("link-srv-1").href = zap + "Ol%C3%A1,%20quero%20saber%20sobre%20Formata%C3%A7%C3%A3o.";
-        document.getElementById("link-srv-2").href = zap + "Ol%C3%A1,%20quero%20saber%20sobre%20Limpeza%20Interna.";
-        document.getElementById("link-srv-3").href = zap + "Ol%C3%A1,%20quero%20saber%20sobre%20Upgrades.";
-        document.getElementById("link-srv-4").href = zap + "Ol%C3%A1,%20quero%20saber%20sobre%20Manuten%C3%A7%C3%A3o.";
-        document.getElementById("link-maps").href = "https://" + "www.google.com/maps/search/?api=1&query=Rua+Francisco+Lisboa+01+Centro+Tres+Coracoes+MG";
-        document.getElementById("link-anydesk").href = gh + "AnyDesk.exe";
-        document.getElementById("link-suporte").href = gh + "SUPORTE.exe";
-
-        const menuToggle = document.getElementById("menu-toggle");
-        const mobileDrawer = document.getElementById("mobile-drawer");
-        if (menuToggle && mobileDrawer) {
-            menuToggle.addEventListener("click", () => {
-                const isOpen = mobileDrawer.classList.toggle("open");
-                menuToggle.setAttribute("aria-expanded", String(isOpen));
-            });
-            mobileDrawer.querySelectorAll("a").forEach((link) => {
-                link.addEventListener("click", () => {
-                    mobileDrawer.classList.remove("open");
-                    menuToggle.setAttribute("aria-expanded", "false");
-                });
-            });
-        }
-    </script>
-
-</body>
-</html>
+            gap: 8px
