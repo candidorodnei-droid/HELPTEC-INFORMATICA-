@@ -52,70 +52,76 @@
       margin: 0 auto;
     }
 
-    /* ================= HEADER ================= */
+    /* ================= HEADER BRANCO ================= */
     header {
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(4, 13, 26, 0.94);
+      background: rgba(255, 255, 255, 0.98);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border-glass);
+      border-bottom: 2px solid #e2e8f0;
+      box-shadow: 0 4px 18px rgba(4, 13, 26, 0.14);
       z-index: 1000;
-      padding: 12px 0;
+      padding: 10px 0;
     }
 
     .nav-wrapper {
+      position: relative;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 12px;
+      min-height: 76px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      flex-shrink: 0;
+      justify-content: center;
+      flex: 1;
     }
 
     .brand-logo {
-      height: 64px;
+      height: 74px;
       width: auto;
-      max-width: 340px;
+      max-width: 420px;
       object-fit: contain;
       display: block;
-      filter: invert(1) hue-rotate(180deg) brightness(1.4) contrast(1.2);
-      mix-blend-mode: screen;
     }
 
     nav ul {
       display: flex;
       list-style: none;
-      gap: 24px;
+      gap: 22px;
+      align-items: center;
     }
 
     nav ul li a {
       font-size: 0.95rem;
-      font-weight: 500;
-      color: #cbd5e1;
+      font-weight: 600;
+      color: #0f172a;
       transition: color 0.3s;
+      white-space: nowrap;
     }
 
     nav ul li a:hover {
-      color: var(--accent);
+      color: var(--primary);
     }
 
     .menu-toggle {
       display: none;
-      font-size: 1.7rem;
+      font-size: 1.75rem;
       background: none;
       border: none;
-      color: var(--text-light);
+      color: #0f172a;
       cursor: pointer;
+      padding: 4px 8px;
+      z-index: 2;
     }
 
     /* ================= HERO SECTION ================= */
     .hero {
-      padding: 145px 0 70px;
+      padding: 150px 0 70px;
       background: radial-gradient(circle at top right, #0c2b59 0%, var(--bg-dark) 65%);
       border-bottom: 1px solid var(--border-glass);
     }
@@ -551,32 +557,48 @@
       }
 
       .hero {
-        padding: 130px 0 60px;
+        padding: 135px 0 60px;
       }
 
       .hero h1 {
         font-size: 1.95rem;
       }
 
+      .nav-wrapper {
+        justify-content: center;
+        min-height: 68px;
+      }
+
+      .brand {
+        width: 100%;
+        padding-right: 36px;
+      }
+
       .brand-logo {
-        height: 54px;
-        max-width: 265px;
+        height: 62px;
+        max-width: 100%;
+        margin: 0 auto;
       }
 
       .menu-toggle {
         display: block;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
       }
 
       nav ul {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 82px;
+        top: 100%;
         left: 0;
         width: 100%;
-        background: #061224;
-        padding: 20px;
-        border-bottom: 1px solid var(--border-glass);
+        background: #ffffff;
+        padding: 18px 20px;
+        border-bottom: 2px solid #e2e8f0;
+        box-shadow: 0 10px 24px rgba(4, 13, 26, 0.14);
       }
 
       nav ul.active {
