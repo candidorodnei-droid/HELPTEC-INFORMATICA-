@@ -112,6 +112,7 @@
       color: #0f172a;
       transition: color 0.3s;
       white-space: nowrap;
+      cursor: pointer;
     }
 
     nav ul li a:hover {
@@ -190,6 +191,8 @@
       font-size: 0.92rem;
       transition: all 0.3s ease;
       cursor: pointer;
+      border: none;
+      font-family: inherit;
     }
 
     .btn-whatsapp {
@@ -617,6 +620,131 @@
       gap: 12px;
     }
 
+    /* ================= MODAL DE E-MAIL ================= */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 8, 17, 0.84);
+      backdrop-filter: blur(4px);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 480px;
+      padding: 26px 22px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+      position: relative;
+      animation: modalFadeIn 0.2s ease;
+    }
+
+    @keyframes modalFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .modal-header h3 {
+      font-size: 1.25rem;
+      color: var(--text-light);
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.6rem;
+      line-height: 1;
+      cursor: pointer;
+      padding: 2px 6px;
+    }
+
+    .modal-close:hover {
+      color: var(--accent);
+    }
+
+    .modal-subtitle {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .modal-subtitle strong {
+      color: var(--accent);
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #cbd5e1;
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 11px 13px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.05);
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 0.94rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 105px;
+    }
+
+    .modal-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .modal-actions .btn {
+      flex: 1;
+      min-width: 160px;
+    }
+
     /* ================= WHATSAPP FLUTUANTE ================= */
     .floating-wa {
       position: fixed;
@@ -735,7 +863,7 @@
           <li><a href="#espaco">Nosso Espaço</a></li>
           <li><a href="#planos">Planos</a></li>
           <li><a href="suporte.html">Suporte Remoto</a></li>
-          <li><a href="#contato">Contato</a></li>
+          <li><a href="#contato" id="openContactModal">Contato</a></li>
         </ul>
       </nav>
     </div>
@@ -946,6 +1074,41 @@
     </div>
   </section>
 
+  <!-- MODAL DE CONTATO POR E-MAIL -->
+  <div class="modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="contactModalTitle">Enviar Mensagem por E-mail</h3>
+        <button type="button" class="modal-close" id="closeContactModal" aria-label="Fechar janela">&times;</button>
+      </div>
+      <p class="modal-subtitle">
+        Para: <strong>suporte@helptecinformatica.com.br</strong>
+      </p>
+
+      <form id="emailContactForm">
+        <div class="form-group">
+          <label for="senderName">Seu Nome</label>
+          <input type="text" id="senderName" placeholder="Digite seu nome" required />
+        </div>
+
+        <div class="form-group">
+          <label for="emailSubject">Assunto</label>
+          <input type="text" id="emailSubject" placeholder="Ex: Orçamento de manutenção / Dúvida técnica" required />
+        </div>
+
+        <div class="form-group">
+          <label for="emailMessage">Mensagem</label>
+          <textarea id="emailMessage" placeholder="Descreva o problema do equipamento ou o serviço desejado..." required></textarea>
+        </div>
+
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary">✉ Enviar E-mail</button>
+          <button type="button" class="btn btn-outline" id="copyEmailBtn">Copiar E-mail</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <footer>
     <div class="container">
@@ -982,7 +1145,7 @@
     <span>WhatsApp</span>
   </a>
 
-  <!-- SCRIPT MENU MOBILE -->
+  <!-- SCRIPTS -->
   <script>
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
@@ -994,6 +1157,57 @@
     document.querySelectorAll('#navMenu a').forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('active');
+      });
+    });
+
+    // Modal de Contato por E-mail
+    const openContactModal = document.getElementById('openContactModal');
+    const contactModal = document.getElementById('contactModal');
+    const closeContactModal = document.getElementById('closeContactModal');
+    const emailContactForm = document.getElementById('emailContactForm');
+    const copyEmailBtn = document.getElementById('copyEmailBtn');
+
+    openContactModal.addEventListener('click', (e) => {
+      e.preventDefault();
+      contactModal.classList.add('active');
+    });
+
+    closeContactModal.addEventListener('click', () => {
+      contactModal.classList.remove('active');
+    });
+
+    contactModal.addEventListener('click', (e) => {
+      if (e.target === contactModal) {
+        contactModal.classList.remove('active');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && contactModal.classList.contains('active')) {
+        contactModal.classList.remove('active');
+      }
+    });
+
+    emailContactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('senderName').value.trim();
+      const subject = document.getElementById('emailSubject').value.trim();
+      const message = document.getElementById('emailMessage').value.trim();
+
+      const fullSubject = encodeURIComponent(`[Site Helptec] ${subject} - ${name}`);
+      const fullBody = encodeURIComponent(`Nome: ${name}\n\nMensagem:\n${message}`);
+
+      window.location.href = `mailto:suporte@helptecinformatica.com.br?subject=${fullSubject}&body=${fullBody}`;
+      contactModal.classList.remove('active');
+    });
+
+    copyEmailBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText('suporte@helptecinformatica.com.br').then(() => {
+        const originalText = copyEmailBtn.textContent;
+        copyEmailBtn.textContent = '✓ E-mail Copiado!';
+        setTimeout(() => {
+          copyEmailBtn.textContent = originalText;
+        }, 2200);
       });
     });
   </script>
