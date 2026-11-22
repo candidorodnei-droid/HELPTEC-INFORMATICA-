@@ -389,16 +389,43 @@
       align-items: center;
     }
 
+    .space-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
     .photo-frame {
       border-radius: 16px;
       overflow: hidden;
       border: 2px solid var(--border-glass);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+      background: var(--bg-card);
+      display: flex;
+      flex-direction: column;
     }
 
     .photo-frame img {
       width: 100%;
       display: block;
+    }
+
+    .space-gallery .photo-frame img {
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .photo-caption {
+      padding: 10px 12px;
+      background: var(--bg-card);
+      color: #e2e8f0;
+      font-size: 0.82rem;
+      line-height: 1.4;
+      text-align: center;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .about-content h3 {
@@ -661,6 +688,12 @@
         transform: none;
       }
     }
+
+    @media (max-width: 480px) {
+      .space-gallery {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -800,8 +833,15 @@
         </div>
       </div>
 
-      <div class="photo-frame">
-        <img src="espaco.jpg" alt="Espaço de trabalho da Helptec Informática em Três Corações - MG" />
+      <div class="space-gallery">
+        <div class="photo-frame">
+          <img src="espaco.jpg" alt="Espaço de trabalho da Helptec Informática em Três Corações - MG" />
+          <div class="photo-caption">Bancada técnica para manutenção e testes</div>
+        </div>
+        <div class="photo-frame">
+          <img src="Screenshot_20261029_045930_Maps.jpg" alt="Entrada do prédio na Rua Francisco Lisboa, 01 - Três Corações - MG" />
+          <div class="photo-caption">Entrada do prédio na Rua Francisco Lisboa, 01 — Sala 301 (2º andar)</div>
+        </div>
       </div>
     </div>
   </section>
