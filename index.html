@@ -20,6 +20,8 @@
       --accent: #00c3ff;
       --whatsapp: #25d366;
       --whatsapp-hover: #1ebe5d;
+      --google-gold: #fbbc04;
+      --google-gold-hover: #e5a900;
       --text-light: #ffffff;
       --text-muted: #94a3b8;
       --text-dark: #0f172a;
@@ -219,6 +221,25 @@
     .btn-instagram:hover {
       opacity: 0.92;
       transform: translateY(-2px);
+    }
+
+    .btn-google-highlight {
+      background: linear-gradient(135deg, #ffd54f 0%, #fbbc04 100%);
+      color: #0f172a;
+      padding: 16px 28px;
+      font-size: 1.02rem;
+      font-weight: 800;
+      border-radius: 10px;
+      border: 2px solid #fff3c4;
+      box-shadow: 0 10px 26px rgba(251, 188, 4, 0.34);
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .btn-google-highlight:hover {
+      background: linear-gradient(135deg, #ffe082 0%, #e5a900 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(251, 188, 4, 0.45);
     }
 
     .btn-outline {
@@ -511,6 +532,24 @@
     .info-item span {
       font-size: 0.95rem;
       color: #f1f5f9;
+    }
+
+    .google-review-box {
+      background: rgba(251, 188, 4, 0.08);
+      border: 1px solid rgba(251, 188, 4, 0.35);
+      border-radius: 14px;
+      padding: 20px 18px;
+      margin-bottom: 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .google-review-caption {
+      font-size: 0.92rem;
+      color: #fef08a;
+      font-weight: 600;
     }
 
     .contact-actions {
@@ -837,6 +876,13 @@
             <span>Rua Francisco Lisboa, 01, sala 301 (2º andar) – Centro, Três Corações - MG</span><br>
             <a href="https://www.google.com/maps/search/?api=1&query=Rua+Francisco+Lisboa,+01,+Centro,+Tres+Coracoes+-+MG" target="_blank" rel="noopener noreferrer" class="map-link-btn">📍 Abrir no Google Maps</a>
           </div>
+        </div>
+
+        <div class="google-review-box">
+          <span class="google-review-caption">Já fizemos seu atendimento? Deixe sua avaliação no Google em poucos segundos!</span>
+          <a href="https://g.page/r/CRc-dzi1a-3XEBI/review" target="_blank" rel="noopener noreferrer" class="btn btn-google-highlight">
+            ★★★★★ Avaliar Helptec Informática no Google
+          </a>
         </div>
 
         <div class="contact-actions">
