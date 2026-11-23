@@ -171,23 +171,51 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 10px;
       padding: 14px 22px;
-      border-radius: 8px;
+      border-radius: 12px;
       font-weight: 700;
       font-size: 0.94rem;
       transition: all 0.3s ease;
     }
 
+    /* BOTAO WINDOWS BONITO */
     .btn-primary {
-      background-color: var(--primary);
+      background: linear-gradient(135deg, #0078D4 0%, #0066cc 40%, #00c3ff 100%);
       color: #ffffff;
-      border: 1px solid var(--accent);
+      border: none;
+      padding: 18px 28px;
+      font-size: 1.05rem;
+      box-shadow: 0 10px 25px rgba(0, 120, 212, 0.45), inset 0 1px 0 rgba(255,255,255,0.3);
+      position: relative;
+      overflow: hidden;
     }
 
     .btn-primary:hover {
-      background-color: #0052a3;
-      transform: translateY(-2px);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 15px 30px rgba(0, 195, 255, 0.55);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0) scale(0.98);
+    }
+
+    .btn-primary .icon-win {
+      font-size: 1.4rem;
+      background: rgba(255,255,255,0.2);
+      width: 38px;
+      height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+    }
+
+    .btn-primary small {
+      display: block;
+      font-weight: 500;
+      font-size: 0.75rem;
+      opacity: 0.9;
     }
 
     .btn-whatsapp {
@@ -312,6 +340,10 @@
       nav ul.active {
         display: flex;
       }
+
+      .btn-primary {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -348,7 +380,12 @@
 
         <div class="actions">
           <a href="https://github.com/candidorodnei-droid/SUPORTE-HELPTEC/raw/refs/heads/main/AnyDesk.exe" download="AnyDesk.exe" class="btn btn-primary">
-            ⬇ Download do programa de Suporte
+            <span class="icon-win">🪟</span>
+            <span style="text-align:left; line-height:1.2;">
+              Baixar para Windows
+              <small>Clique aqui para baixar o programa</small>
+            </span>
+            <span style="font-size:1.3rem;">⬇</span>
           </a>
           <a href="https://wa.me/5535997740708?text=Olá%20Cândido!%20Baixei%20o%20programa%20de%20suporte%20remoto%20e%20preciso%20iniciar%20o%20atendimento." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
             Enviar Código no WhatsApp
@@ -404,4 +441,4 @@
   </script>
 
 </body>
-                </html>
+</html>
