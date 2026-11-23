@@ -210,35 +210,6 @@
       background: rgba(0, 195, 255, 0.1);
     }
 
-    /* System buttons */
-    .download-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-
-    .btn-os {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 16px 12px;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      color: #fff;
-      transition: transform 0.2s;
-      text-align: center;
-    }
-
-    .btn-os:hover { transform: translateY(-2px); }
-    .btn-win { background: #0078D4; }
-    .btn-mac { background: #000000; border: 1px solid #333; }
-    .btn-linux { background: #F47321; }
-    .btn-mobile { background: #28a745; }
-    .btn-iphone { background: #6c757d; }
-
     .steps-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -341,10 +312,6 @@
       nav ul.active {
         display: flex;
       }
-
-      .download-grid {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
@@ -373,31 +340,16 @@
   <main>
     <div class="container">
       <div class="support-card">
-        <span class="badge">Atendimento à Distância • Windows • Mac • Linux • Android • iPhone</span>
+        <span class="badge">Atendimento à Distância • Windows</span>
         <h1>Central de <span>Suporte Remoto</span></h1>
         <p class="lead">
-          Página exclusiva para clientes com atendimento remoto combinado. Escolha seu sistema abaixo, baixe o programa e siga os passos.
+          Página exclusiva para clientes com atendimento remoto combinado. Baixe o programa de suporte no seu computador Windows e siga os passos abaixo.
         </p>
 
-        <div class="download-grid">
-          <a href="https://github.com/candidorodnei-droid/SUPORTE-HELPTEC/raw/refs/heads/main/AnyDesk.exe" download="AnyDesk.exe" class="btn-os btn-win">
-            🪟 Download para WINDOWS
-          </a>
-          <a href="https://anydesk.com/en/downloads/mac-os" target="_blank" rel="noopener noreferrer" class="btn-os btn-mac">
-            🍎 Download para MAC
-          </a>
-          <a href="https://anydesk.com/en/downloads/linux" target="_blank" rel="noopener noreferrer" class="btn-os btn-linux">
-            🐧 Download para LINUX
-          </a>
-          <a href="https://play.google.com/store/apps/details?id=com.anydesk.anydeskandroid" target="_blank" rel="noopener noreferrer" class="btn-os btn-mobile">
-            🤖 Download para ANDROID
-          </a>
-          <a href="https://apps.apple.com/app/anydesk-remote-desktop/id1359040675" target="_blank" rel="noopener noreferrer" class="btn-os btn-iphone">
-            📱 Download para IPHONE
-          </a>
-        </div>
-
         <div class="actions">
+          <a href="https://github.com/candidorodnei-droid/SUPORTE-HELPTEC/raw/refs/heads/main/AnyDesk.exe" download="AnyDesk.exe" class="btn btn-primary">
+            ⬇ Download do programa de Suporte
+          </a>
           <a href="https://wa.me/5535997740708?text=Olá%20Cândido!%20Baixei%20o%20programa%20de%20suporte%20remoto%20e%20preciso%20iniciar%20o%20atendimento." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
             Enviar Código no WhatsApp
           </a>
@@ -408,7 +360,7 @@
           <div class="step-box">
             <span class="step-num">PASSO 1</span>
             <h2>Baixe e abra o programa</h2>
-            <p>Clique no botão do seu sistema acima e abra o arquivo baixado. No Linux, escolha .deb se for Ubuntu/Mint.</p>
+            <p>Clique no botão de download no computador que receberá o suporte e abra o arquivo baixado.</p>
           </div>
           <div class="step-box">
             <span class="step-num">PASSO 2</span>
@@ -452,4 +404,4 @@
   </script>
 
 </body>
-</html>
+                </html>
